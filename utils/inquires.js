@@ -84,4 +84,4 @@ const updateEmployeeRole = [
     }
 ]
 
-module.exports = { departArray, roleArray, employeeArray, mainMenu, addDepartment, addRole, addEmployee, updateEmployeeRole}
+module.exports = { departArray, roleArray, employeeArray, mainMenu, addDepartment, addRole, addEmployee, updateEmployeeRole }

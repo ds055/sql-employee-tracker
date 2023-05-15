@@ -1,5 +1,5 @@
 const inquirer = require ('inquirer');
-const prompts = require ('./utils/inquires')
+let prompts = require ('./utils/inquires')
 
 const express = require('express');
 
@@ -23,4 +23,41 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to the Game Studio Database!`)
 );
+
+const init = async () => {
+    try{
+        let data = await inquirer.prompt(prompts.mainMenu)
+        switch(data.mainChoice) {
+            case "View All Employees":
+                viewAllEmployees();
+                break;
+            case "View All Departments":
+                viewAllDeparts();
+                break;
+        }
+    }catch(err){
+        console.log(err);
+    }
+}
+
+init();
+
+// DB Query Methods
+const viewAllEmployees = () => {
+    db.query(`SELECT id, department_name AS Department FROM department;`, (err, results) => {
+        if (err) console.log(err);
+        // console.log(results)
+        console.table(results);
+        init();
+    });
+}
+
+const viewAllDeparts = () => {
+    db.query(`SELECT id, department_name AS Department FROM department;`, (err, results) => {
+        if (err) console.log(err);
+        // console.log(results)
+        console.table(results);
+        init();
+    });
+}
 

@@ -1,0 +1,1 @@
+const sqlDepartments = `SELECT * FROM department`
