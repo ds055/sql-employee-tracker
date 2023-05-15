@@ -1,29 +1,30 @@
+DROP DATABASE IF EXISTS game_studio_db;
 CREATE DATABASE game_studio_db;
 
 USE game_studio_db;
 
 CREATE TABLE department (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
+    department_name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE role (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY Key,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL, 
+    department_id INT,
     FOREIGN KEY (department_id)
     REFERENCES department(id)
     ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY Key,
-    first_name VARCHAR(30),
-    last_name VARCHAR(30),
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT,
+    manager_id INT,
     FOREIGN KEY (role_id)
     REFERENCES role(id)
-    ON DELETE SET NULL,
-    FOREIGN KEY (manager_id)
-    REFERENCES employee(id)
-    ON DELETE SET NULL,
+    ON DELETE SET NULL
 );
