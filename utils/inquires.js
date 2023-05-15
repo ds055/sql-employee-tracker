@@ -8,7 +8,7 @@ const mainMenu = [
         type: "list",
         name: "mainChoice",
         message: "What would you like to do?",
-        choices: ["View All Employees", "Add Employees", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department", "Quit"]
+        choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department", "Quit"]
     }
 ];
 
@@ -25,11 +25,6 @@ const addRole = [
         type: "input",
         name: "roleName",
         message: "What is the name of the role?"
-    },
-    {
-        type: "input",
-        name: "roleSalary",
-        message: "What is the salary of the role?"
     },
     {
         type: "input",
@@ -63,7 +58,7 @@ const addEmployee = [
     },
     {
         type: "list",
-        name: "role",
+        name: "manager",
         message: "Who is this employee's manager?",
         choices: employeeArray
     }
@@ -74,13 +69,13 @@ const updateEmployeeRole = [
         type: "list",
         name: "employee",
         message: "Which employee's role do you want to update?",
-        list: employeeArray
+        choices: employeeArray
     },
     {
         type: "list",
-        name: "lastName",
+        name: "role",
         message: "What role do you want to assign the selected employee?",
-        list: roleArray
+        choices: roleArray
     }
 ]
 
