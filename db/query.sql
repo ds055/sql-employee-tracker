@@ -1,1 +1,0 @@
-SELECT id FROM department WHERE department_name = "Designer"

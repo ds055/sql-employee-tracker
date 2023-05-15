@@ -1,9 +1,11 @@
+-- seed department table
 INSERT INTO department (department_name)
 VALUES ("Coding"),
        ("Music"),
        ("Art"),
        ("Designer");
 
+-- seed role table
 INSERT INTO role (title, salary, department_id)
 VALUES ("Enemy AI", 75000, 1),
        ("Physics Engine", 90000, 1),
@@ -14,6 +16,7 @@ VALUES ("Enemy AI", 75000, 1),
        ("Sr Story Designer", 85000, 4),
        ("Level Designer", 67000, 4);
 
+-- seed employee table
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Koopa", "Bowser", 1, 2),
        ("Isaac", "Newton", 2, null),
@@ -25,3 +28,4 @@ VALUES ("Koopa", "Bowser", 1, 2),
        ("Relm", "Arrowny", 6, null),
        ("Masato", "Kato", 7, null),
        ("Bergholdt", "Johnson", 8, 9);
+f

@@ -3,6 +3,7 @@ let departArray = [];
 let roleArray = [];
 let employeeArray = [];
 
+// Initial prompt question; answer used in switch to call appropriate function
 const mainMenu = [
     {
         type: "list",
@@ -12,6 +13,7 @@ const mainMenu = [
     }
 ];
 
+// Add department query
 const addDepartment = [
     {
         type: "input",
@@ -20,6 +22,7 @@ const addDepartment = [
     }
 ]
 
+// Add role query; departArray populated in addRole function
 const addRole = [
     {
         type: "input",
@@ -39,6 +42,7 @@ const addRole = [
     }
 ]
 
+// Add employee query; choices arrays populated in addEmployee() function
 const addEmployee = [
     {
         type: "input",
@@ -64,6 +68,7 @@ const addEmployee = [
     }
 ]
 
+// Update employee query; choices arrays populated in updateEmployee() function
 const updateEmployeeRole = [
     {
         type: "list",
@@ -79,4 +84,5 @@ const updateEmployeeRole = [
     }
 ]
 
+// Export arrays for inquire queries in server.js
 module.exports = { departArray, roleArray, employeeArray, mainMenu, addDepartment, addRole, addEmployee, updateEmployeeRole }

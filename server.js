@@ -1,10 +1,10 @@
+// Import required files/apps
 const inquirer = require ('inquirer');
 let prompts = require ('./utils/inquires')
-
 const express = require('express');
 
+// Import mySql
 const mysql = require('mysql2');
-const sqlInq = require('./utils/db_inquiries')
 
 // Port and app constants
 const PORT = process.env.PORT || 3001; 
@@ -14,7 +14,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-// Connection to db
+// Connection to DB
 const db = mysql.createConnection(
     {
         host: 'localhost',
@@ -25,8 +25,20 @@ const db = mysql.createConnection(
     console.log(`Connected to the Game Studio Database!`)
 );
 
+// Init method
 const init = async () => {
     try{
+        console.log(`
+_________________________________________
+|                                       |
+|            Welcome to the             |
+|        ## Video Game Studio ##        |
+|              Employee                 |
+|            Database Editor            |
+|                                       |
+_________________________________________
+\n`)
+        // Switch statement calls methods based on user response to first prompt
         let data = await inquirer.prompt(prompts.mainMenu)
         switch(data.mainChoice) {
             case "View All Employees":
@@ -60,10 +72,13 @@ const init = async () => {
     }
 }
 
+// Call init function
 init();
 
 // DB Query Methods
+// Shows all departments
 function viewAllDeparts() {
+    // 
     db.query(`SELECT id, department_name AS Department FROM department;`, (err, results) => {
         if (err) console.log(err);
         // console.log(results)
