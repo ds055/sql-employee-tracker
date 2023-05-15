@@ -1,5 +1,10 @@
+const inquirer = require ('inquirer');
+const prompts = require ('./utils/inquires')
+
 const express = require('express');
+
 const mysql = require('mysql2');
+const sqlInq = require('./utils/db_inquiries')
 
 const PORT = process.env.PORT || 3001; 
 const app = express();
@@ -18,3 +23,4 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to the Game Studio Database!`)
 );
+
