@@ -1,6 +1,6 @@
 # SQL Employee Tracker
 
-[Link to video]()
+[Link to video](https://drive.google.com/file/d/188Mk4dFZG_LAxYiaBhPDDzbXM4fxGAfE/view)
 
 ## Description
 Via a command line interface, users can experience a prototype employee database manager that can track employee names, managers, roles, departments, and salaries. 
