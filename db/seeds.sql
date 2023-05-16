@@ -28,4 +28,3 @@ VALUES ("Koopa", "Bowser", 1, 2),
        ("Relm", "Arrowny", 6, null),
        ("Masato", "Kato", 7, null),
        ("Bergholdt", "Johnson", 8, 9);
-f
